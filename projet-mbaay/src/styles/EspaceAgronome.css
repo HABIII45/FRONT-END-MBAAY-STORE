@@ -1,0 +1,461 @@
+:root {
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --green: #1A2421;
+    --gold: #C6A15A;
+    --hover: #D9C5B2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DESKTOP — MBAAY STORE / ESPACE AGRONOME
+   ========================================================= */
+
+.espace-agronome {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Arrière-plan champ (Desktop) */
+.champ-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3) contrast(1.1);
+    z-index: 0;
+    display: block;
+}
+
+
+/* =========================================================
+   PHOTO CENTRALE & EFFET D'INTÉGRATION 3D
+   ========================================================= */
+
+.visuel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.image-agronome {
+    position: relative;
+    width: auto;
+    height: 76vh;
+    max-width: 48vw;
+    display: block;
+    object-fit: contain;
+    margin-top: 80px;
+    z-index: 1;
+
+    /* Masque adouci : transition fluide vers le noir */
+    -webkit-mask-image: radial-gradient(
+        ellipse 60% 70% at 50% 45%,
+        #000 15%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 0.2) 65%,
+        transparent 90%
+    );
+
+    mask-image: radial-gradient(
+        ellipse 60% 70% at 50% 45%,
+        #000 15%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 0.2) 65%,
+        transparent 90%
+    );
+
+    /* Ombre de profondeur d'ambiance */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9));
+}
+
+.visuel::after,
+.overlay {
+    display: none;
+}
+
+
+/* =========================================================
+   CONTENU PRINCIPAL (LAYOUT GENERAL)
+   ========================================================= */
+
+.contenu-gauche {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    padding: 34px 46px;
+    box-sizing: border-box;
+    z-index: 10;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   EN-TÊTE : BADGE + LOGO (CENTRÉS EN HAUT)
+   ========================================================= */
+
+.identite {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    min-width: 0;
+    max-width: 100%;
+    z-index: 20;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 13px;
+    border: 1px solid rgba(198, 161, 90, 0.38);
+    border-radius: 999px;
+    background: rgba(10, 10, 10, 0.42);
+    color: #C6A15A;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo-mbaay {
+    width: 48px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    mix-blend-mode: screen;
+    filter: brightness(0.9);
+}
+
+
+/* =========================================================
+   TEXTE À GAUCHE
+   ========================================================= */
+
+.contenu {
+    position: absolute;
+    left: 46px;
+    bottom: 19%;
+    width: 32%;
+    max-width: 440px;
+    min-width: 0;
+    pointer-events: auto;
+}
+
+.contenu h1 {
+    margin: 0 0 18px;
+    max-width: 440px;
+    font-size: clamp(42px, 4.5vw, 68px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -3px;
+    color: #FFFFFF;
+}
+
+.contenu p {
+    margin: 0;
+    max-width: 340px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================================
+   BOUTONS À DROITE
+   ========================================================= */
+
+.actions {
+    position: absolute;
+    right: 200px;
+    top: 60%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+.btn-principal,
+.btn-secondaire {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 142px;
+    min-width: 142px;
+    height: 48px;
+    min-height: 48px;
+    padding: 0 17px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    background: rgba(20, 17, 14, 0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-principal:hover,
+.btn-secondaire:hover {
+    background: rgba(217, 197, 178, 0.16);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-3px);
+}
+
+.btn-principal span,
+.btn-secondaire span {
+    transition: transform 0.3s ease;
+}
+
+.btn-principal:hover span,
+.btn-secondaire:hover span {
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   TABLETTES / PETITS DESKTOPS
+========================================= */
+
+@media (max-width: 1000px) and (min-width: 769px) {
+
+    .contenu-gauche {
+        padding: 24px 27px;
+    }
+
+    .contenu h1 {
+        font-size: 42px;
+    }
+
+    .contenu p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE (< 768px) — RENDER COMPLET ET CENTRÉ SANS DÉCALAGE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. RÉINITIALISATION DES CONTENEURS */
+    .espace-agronome {
+        position: relative !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+        background: #000 !important;
+    }
+
+    .champ-bg {
+        display: none !important;
+    }
+
+    /* 2. PHOTO EN PLEIN ÉCRAN SOUS L'INTERFACE */
+    .visuel {
+        display: block !important;
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100dvh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 1 !important;
+    }
+
+    .image-agronome,
+    .image-agronome-mobile {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        margin: 0 !important;
+        object-fit: cover !important;
+        object-position: center 20% !important; /* Centre bien la tête de l'agronome */
+        
+        /* Annule complètement les masques CSS radiaux ou dégradés */
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        filter: brightness(0.85) !important;
+    }
+
+    .overlay {
+        display: none !important;
+    }
+
+    /* 3. LAYOUT DU CONTENU (ALIGNÉ EN COLONNE SUR LA PHOTO) */
+    .contenu-gauche {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100dvh !important;
+        padding: 40px 20px 28px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        background: transparent !important;
+        z-index: 10 !important;
+        pointer-events: none !important;
+    }
+
+    /* BADGE + LOGO (CENTRÉS EN HAUT) */
+    .identite {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        pointer-events: auto !important;
+    }
+
+    .label {
+        padding: 6px 14px !important;
+        font-size: 8px !important;
+        letter-spacing: 1.5px !important;
+        background: rgba(10, 10, 10, 0.4) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    .logo-mbaay {
+        width: 44px !important;
+        height: auto !important;
+        margin: 0 !important;
+    }
+
+    /* TEXTE (CENTRÉ EN BAS) */
+    .contenu {
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-top: auto !important;
+        margin-bottom: 20px !important;
+        text-align: center !important;
+        pointer-events: auto !important;
+    }
+
+    .contenu h1 {
+        margin: 0 0 8px !important;
+        font-size: 26px !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.5px !important;
+        font-weight: 500 !important;
+        color: #FFFFFF !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .contenu p {
+        margin: 0 auto !important;
+        max-width: 280px !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    /* BOUTONS (EMPILÉS EN BAS) */
+    .actions {
+        position: relative !important;
+        right: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        pointer-events: auto !important;
+    }
+
+    .btn-principal,
+    .btn-secondaire {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        border-radius: 999px !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        justify-content: center !important;
+    }
+
+    .btn-principal {
+        background: #F2EFE9 !important;
+        color: #1A1A1A !important;
+        border: none !important;
+    }
+
+    .btn-secondaire {
+        background: rgba(255, 255, 255, 0.12) !important;
+        color: #FFFFFF !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+    }
+}
