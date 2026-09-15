@@ -10,8 +10,8 @@ import { VerificationInfos } from '../pages/AffichageCompteAgronome';
 import { Subscription } from '../pages/ChoixAbonnement';
 import { ValidationAbonnement } from '../pages/ValidationAbonnement';
 import { IdentiteBoutique } from '../pages/IdentiteBoutique';
-
-
+import { ValidationBoutique } from '../pages/ValidationBoutique';
+import { ValidationBoutiqueFinal } from '../pages/ValidationBoutiqueFinal';
 
 
 export function AppRoutes() {
@@ -29,6 +29,8 @@ export function AppRoutes() {
         <Route path="/agronome/infos-profil/abonnement" element={<Subscription />}/>
         <Route path="/agronome/infos-profil/abonnementValidation" element={<ValidationAbonnement />}/>
         <Route path="/boutique" element={<IdentiteBoutique />}/>
+        <Route path="/boutiquePublie" element={<ValidationBoutique />}/>
+        <Route path="/boutiquePubliefinal" element={<ValidationBoutiqueFinal />}/>
         
 
 

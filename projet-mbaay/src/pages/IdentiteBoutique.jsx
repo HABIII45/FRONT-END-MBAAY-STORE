@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/IdentiteBoutique.css";
+import { Link } from "react-router-dom";
 
 /* =========================================================
    DONNÉES MOCKÉES
@@ -271,6 +272,7 @@ function IconLocation() {
 
 export  function IdentiteBoutique() {
   const [shop, setShop] = useState(mockShop);
+  
 
   const [selectedPalette, setSelectedPalette] = useState("signature");
 
@@ -671,10 +673,10 @@ export  function IdentiteBoutique() {
                   Précédent
                 </button>
 
-                <button type="button" className="pb-continue-button">
+                <Link to="/boutiquePublie" className="pb-continue-button">
                   Continuer
                   <IconChevron />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -759,7 +761,7 @@ export  function IdentiteBoutique() {
             </div>
 
             <button
-              type="button"
+              to="/boutiquePublie"
               className="pb-modal-confirm"
               onClick={() => setCategoryModalOpen(false)}
             >
@@ -872,13 +874,7 @@ function PreviewPanel({
           </div>
 
           <div className="store-header-actions">
-            <button type="button" className="store-nav-link">
-              Explorer
-            </button>
-
-            <button type="button" className="store-nav-link">
-              À propos
-            </button>
+            -
 
             <button type="button" className="store-cart">
               <IconCart />

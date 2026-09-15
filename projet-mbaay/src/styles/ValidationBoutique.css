@@ -1,0 +1,783 @@
+/* =========================================================
+   MBAAY STORE — ÉTAPE 08
+   PAGE : VOTRE BOUTIQUE EST PRÊTE
+   CSS PUR — RESPONSIVE
+   ========================================================= */
+
+.shop-ready {
+  --bg: #0c0a09;
+  --surface: #171615;
+  --surface-hover: #1c1b19;
+
+  --white: #f5f5f4;
+  --white-soft: #e7e5e4;
+
+  --muted: #a8a29e;
+  --muted-light: #78716c;
+
+  --accent: #b56b0b;
+  --accent-light: #c77a12;
+
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background: var(--bg);
+  color: var(--white);
+
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.shop-ready__background {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(90px);
+  background: rgba(181, 107, 11, 0.045);
+}
+
+.shop-ready__background--top {
+  width: 800px;
+  height: 800px;
+  right: -380px;
+  top: -380px;
+}
+
+.shop-ready__background--bottom {
+  width: 600px;
+  height: 600px;
+  left: -260px;
+  bottom: -400px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.shop-ready__header {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding: 40px 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop-ready__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shop-ready__brand-mark {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent);
+  border-radius: 8px;
+
+  position: relative;
+}
+
+.shop-ready__brand-mark span {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+
+  background: #0c0a09;
+
+  clip-path: polygon(
+    50% 0%,
+    100% 50%,
+    50% 100%,
+    0% 50%
+  );
+}
+
+.shop-ready__brand-name {
+  color: var(--white);
+
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.shop-ready__support {
+  color: #78716c;
+
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.shop-ready__support button {
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+  color: var(--white);
+
+  font: inherit;
+  font-weight: 300;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.shop-ready__content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  padding: 80px 48px 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================================================
+   STEP
+   ========================================================= */
+
+.shop-ready__step {
+  padding-bottom: 48px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop-ready__step-label {
+  margin-bottom: 16px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 4.8px;
+}
+
+.shop-ready__progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shop-ready__progress-item {
+  width: 24px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.shop-ready__intro {
+  width: 100%;
+  max-width: 768px;
+
+  padding-bottom: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.shop-ready__intro h1 {
+  margin: 0 0 32px;
+
+  color: var(--white);
+
+  font-size: 60px;
+  line-height: 75px;
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+}
+
+.shop-ready__intro p {
+  margin: 0;
+
+  color: #a8a29e;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 300;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.shop-ready__choices {
+  width: 100%;
+  max-width: 1152px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 32px;
+}
+
+.shop-ready__card {
+  min-height: 520px;
+
+  padding: 48px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 40px;
+
+  overflow: hidden;
+
+  background: var(--surface);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.shop-ready__card--recommended {
+  border: 1px solid rgba(181, 107, 11, 0.2);
+}
+
+.shop-ready__card--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.shop-ready__card:hover {
+  transform: translateY(-3px);
+}
+
+.shop-ready__card--recommended:hover {
+  border-color: rgba(181, 107, 11, 0.35);
+}
+
+.shop-ready__card--secondary:hover {
+  background: var(--surface-hover);
+}
+
+
+/* =========================================================
+   RECOMMENDED
+   ========================================================= */
+
+.shop-ready__recommended {
+  position: absolute;
+
+  top: 32px;
+  right: 32px;
+
+  padding: 6px 16px;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  color: #1c1104;
+
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.shop-ready__card-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.shop-ready__icon-box {
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+}
+
+.shop-ready__card--recommended .shop-ready__icon-box {
+  background: rgba(181, 107, 11, 0.1);
+  border: 1px solid rgba(181, 107, 11, 0.2);
+
+  color: var(--accent);
+}
+
+.shop-ready__card--secondary .shop-ready__icon-box {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #a8a29e;
+}
+
+.shop-ready__icon-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.shop-ready__card-title {
+  width: 100%;
+
+  margin-top: 24px;
+
+  color: var(--white);
+
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+}
+
+.shop-ready__card-description {
+  margin-top: 16px;
+
+  color: #a8a29e;
+
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+
+  letter-spacing: -0.012em;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.shop-ready__action {
+  width: 100%;
+
+  min-height: 72px;
+
+  padding: 20px 24px;
+
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  border-radius: 16px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 18px;
+  line-height: 28px;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.shop-ready__action:hover {
+  transform: translateY(-1px);
+}
+
+.shop-ready__action--primary {
+  border: 1px solid transparent;
+
+  background: #f5f5f4;
+  color: #0c0a09;
+
+  font-weight: 600;
+}
+
+.shop-ready__action--primary:hover {
+  background: #ffffff;
+}
+
+.shop-ready__action--secondary {
+  border: 1px solid rgba(168, 162, 158, 0.3);
+
+  background: transparent;
+  color: var(--white);
+
+  font-weight: 500;
+}
+
+.shop-ready__action--secondary:hover {
+  border-color: rgba(168, 162, 158, 0.5);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.shop-ready__arrow {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.shop-ready__card-glow {
+  width: 260px;
+  height: 260px;
+
+  position: absolute;
+
+  right: -80px;
+  bottom: -80px;
+
+  border-radius: 999px;
+
+  background: rgba(181, 107, 11, 0.1);
+
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.shop-ready__quote {
+  padding-top: 96px;
+
+  color: rgba(168, 162, 158, 0.4);
+
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+
+  letter-spacing: -0.01em;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .shop-ready__header {
+    padding: 32px;
+  }
+
+  .shop-ready__content {
+    padding: 64px 32px 96px;
+  }
+
+  .shop-ready__intro h1 {
+    font-size: 52px;
+    line-height: 64px;
+  }
+
+  .shop-ready__choices {
+    max-width: 1000px;
+    gap: 24px;
+  }
+
+  .shop-ready__card {
+    min-height: 500px;
+    padding: 40px;
+    border-radius: 32px;
+  }
+
+  .shop-ready__card-title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .shop-ready__card-description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .shop-ready {
+    min-height: 100svh;
+  }
+
+  .shop-ready__header {
+    padding: 24px 20px;
+
+    align-items: center;
+  }
+
+  .shop-ready__brand {
+    gap: 10px;
+  }
+
+  .shop-ready__brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .shop-ready__brand-mark span {
+    width: 17px;
+    height: 17px;
+  }
+
+  .shop-ready__brand-name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .shop-ready__support {
+    font-size: 11px;
+    line-height: 16px;
+
+    text-align: right;
+  }
+
+  .shop-ready__content {
+    padding: 40px 20px 72px;
+  }
+
+  .shop-ready__step {
+    padding-bottom: 40px;
+  }
+
+  .shop-ready__step-label {
+    margin-bottom: 14px;
+
+    font-size: 10px;
+    line-height: 14px;
+
+    letter-spacing: 3px;
+  }
+
+  .shop-ready__progress {
+    gap: 5px;
+  }
+
+  .shop-ready__progress-item {
+    width: 18px;
+    height: 3px;
+  }
+
+  .shop-ready__intro {
+    padding-bottom: 48px;
+  }
+
+  .shop-ready__intro h1 {
+    margin-bottom: 20px;
+
+    font-size: 38px;
+    line-height: 48px;
+
+    letter-spacing: -0.04em;
+  }
+
+  .shop-ready__intro p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .shop-ready__choices {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+  .shop-ready__card {
+    min-height: auto;
+
+    padding: 28px;
+
+    border-radius: 28px;
+  }
+
+  .shop-ready__recommended {
+    top: 24px;
+    right: 24px;
+
+    padding: 5px 12px;
+
+    font-size: 8px;
+    line-height: 14px;
+  }
+
+  .shop-ready__icon-box {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 20px;
+  }
+
+  .shop-ready__icon-svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .shop-ready__card-title {
+    margin-top: 22px;
+
+    padding-right: 0;
+
+    font-size: 23px;
+    line-height: 31px;
+  }
+
+  .shop-ready__card-description {
+    margin-top: 12px;
+
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  .shop-ready__card-description br {
+    display: none;
+  }
+
+  .shop-ready__action {
+    min-height: 60px;
+
+    margin-top: 40px;
+
+    padding: 16px 18px;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .shop-ready__arrow {
+    width: 15px;
+    height: 15px;
+  }
+
+  .shop-ready__quote {
+    max-width: 280px;
+
+    padding-top: 56px;
+
+    font-size: 12px;
+    line-height: 19px;
+  }
+}
+
+
+/* =========================================================
+   PETITS MOBILES
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .shop-ready__header {
+    padding: 20px 16px;
+  }
+
+  .shop-ready__support span {
+    display: none;
+  }
+
+  .shop-ready__content {
+    padding: 36px 16px 60px;
+  }
+
+  .shop-ready__intro h1 {
+    max-width: 320px;
+
+    font-size: 34px;
+    line-height: 43px;
+  }
+
+  .shop-ready__intro p {
+    max-width: 330px;
+
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .shop-ready__card {
+    padding: 24px;
+
+    border-radius: 24px;
+  }
+
+  .shop-ready__card-title {
+    font-size: 21px;
+    line-height: 29px;
+  }
+
+  .shop-ready__card-description {
+    font-size: 13px;
+    line-height: 21px;
+  }
+
+  .shop-ready__action {
+    margin-top: 32px;
+
+    font-size: 13px;
+  }
+}
