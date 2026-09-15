@@ -143,31 +143,47 @@
 ========================================================= */
 
 .access_label {
-  display: none;
+    display: none;
+    text-decoration: none;
 }
 
-
-/* =========================================================
-   TITRE
-========================================================= */
 
 .access_title {
-  display: block;
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
 
-  font-family: "Poppins", sans-serif;
+    border: none;
+    outline: none;
 
-  font-size: 13px;
-  font-weight: 400;
+    background: transparent;
 
-  line-height: 1;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
 
-  letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.95);
 
-  white-space: nowrap;
+    cursor: pointer;
 
-  color: rgba(255, 255, 255, 0.95);
+    appearance: none;
+    -webkit-appearance: none;
 }
+.access_title:focus {
 
+    outline: none;
+
+}.access_title:focus-visible {
+
+    outline: 1px solid rgba(255, 255, 255, 0.4);
+
+    outline-offset: 4px;
+
+}
 
 /* =========================================================
    ARROW

@@ -1,0 +1,683 @@
+/* =========================================================
+   MBAAY STORE — CONNEXION AGRONOME
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0A0A0A;
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.login-page {
+    position: relative;
+    width: 100%;
+    min-height: 100dvh;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.login-card {
+    width: 100%;
+    min-height: auto;
+    background: #0A0A0A;
+}
+
+.login-card-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 43vh;
+    min-height: 300px;
+    overflow: hidden;
+    background: #0A0A0A;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: saturate(0.82) contrast(1.02);
+}
+
+
+/* Fondu de l'image vers le noir */
+
+.hero-image-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 42%,
+            rgba(10, 10, 10, 0.15) 58%,
+            rgba(10, 10, 10, 0.65) 82%,
+            #0A0A0A 100%
+        );
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: -35px;
+    padding: 0 28px 45px;
+    background: #0A0A0A;
+    text-align: center;
+}
+
+
+/* =========================================================
+   MBAAY STORE
+   ========================================================= */
+
+.store-name {
+    margin: 0 0 20px;
+    color: #C6A15A;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.main-title {
+    margin: 0 auto 20px;
+    color: #FFFFFF;
+    font-size: clamp(44px, 11vw, 62px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -3px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.welcome-text {
+    max-width: 370px;
+    margin: 0 auto 34px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* =========================================================
+   FORMULAIRE
+   ========================================================= */
+
+.login-form {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+
+/* Label */
+
+.input-label {
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+
+/* Groupe */
+
+.input-group {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+
+/* Input */
+
+.email-input {
+    width: 100%;
+    padding: 13px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    outline: none;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.23);
+}
+
+.email-input:focus {
+    border-bottom-color: #C6A15A;
+}
+
+
+/* =========================================================
+   BOUTON
+   ========================================================= */
+
+.submit-button {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid rgba(198, 161, 90, 0.55);
+    border-radius: 999px;
+    background: #C6A15A;
+    color: #0A0A0A;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #D3B16F;
+    transform: translateY(-1px);
+}
+
+.submit-button:active {
+    transform: scale(0.985);
+}
+
+
+/* =========================================================
+   SÉCURITÉ
+   ========================================================= */
+
+.security-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 390px;
+    margin: 22px auto 0;
+    color: rgba(255, 255, 255, 0.36);
+    text-align: left;
+}
+
+.security-icon {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: rgba(198, 161, 90, 0.7);
+    font-size: 12px;
+}
+
+.notice-text {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.login-footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 8px;
+    letter-spacing: 0.8px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.32);
+    text-decoration: none;
+    font-size: 8px;
+    letter-spacing: 1px;
+    transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+    color: #C6A15A;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    /*
+     * La page reste scrollable.
+     */
+
+    .login-page {
+        min-height: 100dvh;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        align-items: center;
+
+        padding: 60px 40px 35px;
+    }
+
+
+    /* =====================================================
+       CARTE DESKTOP
+       ===================================================== */
+
+    .login-card {
+        position: relative;
+
+        width: min(1180px, 100%);
+
+        min-height: 680px;
+
+        margin: 0 auto;
+
+        background: #0A0A0A;
+
+        border: 1px solid rgba(255, 255, 255, 0.07);
+
+        border-radius: 28px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+
+
+    .login-card-inner {
+        position: relative;
+
+        width: 100%;
+
+        min-height: 680px;
+
+        display: grid;
+
+        grid-template-columns: 48% 52%;
+
+        background: #0A0A0A;
+    }
+
+
+    /* =====================================================
+       PHOTO — GAUCHE
+       ===================================================== */
+
+    .hero-image-container {
+        position: relative;
+
+        width: 100%;
+
+        height: 680px;
+        min-height: 680px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #0A0A0A;
+    }
+
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center 18%;
+
+        filter:
+            saturate(0.82)
+            contrast(1.02);
+
+        /*
+         * Fondu horizontal de la photo
+         * vers la partie noire.
+         */
+
+        -webkit-mask-image:
+            linear-gradient(
+                to right,
+                #000 0%,
+                #000 55%,
+                rgba(0, 0, 0, 0.92) 65%,
+                rgba(0, 0, 0, 0.62) 76%,
+                rgba(0, 0, 0, 0.25) 88%,
+                transparent 100%
+            );
+
+        mask-image:
+            linear-gradient(
+                to right,
+                #000 0%,
+                #000 55%,
+                rgba(0, 0, 0, 0.92) 65%,
+                rgba(0, 0, 0, 0.62) 76%,
+                rgba(0, 0, 0, 0.25) 88%,
+                transparent 100%
+            );
+    }
+
+
+    /*
+     * Couche supplémentaire pour rendre
+     * la transition photo → noir plus douce.
+     */
+
+    .hero-image-container::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        background:
+            linear-gradient(
+                to right,
+                transparent 0%,
+                transparent 48%,
+                rgba(10, 10, 10, 0.04) 56%,
+                rgba(10, 10, 10, 0.20) 68%,
+                rgba(10, 10, 10, 0.55) 80%,
+                rgba(10, 10, 10, 0.88) 92%,
+                #0A0A0A 100%
+            );
+    }
+
+
+    /* =====================================================
+       CONTENU — DROITE
+       ===================================================== */
+
+    .content-container {
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+
+        min-height: 680px;
+
+        margin: 0;
+
+        padding: 70px 80px 70px 55px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background: #0A0A0A;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       MBAAY STORE
+       ===================================================== */
+
+    .store-name {
+        margin: 0 0 24px;
+
+        font-size: 11px;
+
+        letter-spacing: 3.2px;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       BON RETOUR
+       ===================================================== */
+
+    .main-title {
+        margin: 0 0 24px;
+
+        font-size: clamp(64px, 6vw, 92px);
+
+        font-weight: 800;
+
+        line-height: 0.88;
+
+        letter-spacing: -5px;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       TEXTE
+       ===================================================== */
+
+    .welcome-text {
+        max-width: 430px;
+
+        margin: 0 0 48px;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       FORMULAIRE
+       ===================================================== */
+
+    .login-form {
+        max-width: 430px;
+
+        margin: 0;
+
+        text-align: left;
+    }
+
+    .email-input {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        min-height: 52px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       SÉCURITÉ
+       ===================================================== */
+
+    .security-notice {
+        max-width: 430px;
+
+        margin: 24px 0 0;
+
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .login-footer {
+        width: min(1180px, 100%);
+
+        margin-top: 24px;
+
+        padding:
+            0
+            4px;
+
+        border-top: none;
+    }
+}
+
+
+/* =========================================================
+   GRAND DESKTOP
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    .login-page {
+        padding-top: 70px;
+        padding-bottom: 40px;
+    }
+
+
+    .login-card {
+        width: min(1240px, 100%);
+
+        min-height: 740px;
+    }
+
+
+    .login-card-inner {
+        min-height: 740px;
+
+        grid-template-columns: 49% 51%;
+    }
+
+
+    /* PHOTO */
+
+    .hero-image-container {
+        height: 740px;
+
+        min-height: 740px;
+    }
+
+
+    /* CONTENU */
+
+    .content-container {
+        min-height: 740px;
+
+        padding:
+            80px
+            105px
+            80px
+            65px;
+    }
+
+
+    .store-name {
+        margin-bottom: 27px;
+
+        font-size: 11px;
+    }
+
+
+    .main-title {
+        font-size: 96px;
+
+        letter-spacing: -5.5px;
+    }
+
+
+    .welcome-text {
+        max-width: 450px;
+
+        margin-bottom: 48px;
+
+        font-size: 14px;
+    }
+
+
+    .login-form {
+        max-width: 450px;
+    }
+
+
+    .security-notice {
+        max-width: 450px;
+    }
+
+
+    .login-footer {
+        width: min(1240px, 100%);
+    }
+}   

@@ -1,0 +1,463 @@
+/* =========================================================
+ * STEP 3 — RESPONSIVE (MOBILE & DESKTOP)
+ * ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.creation-step-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #0a0a0a;
+  color: #d9c5b2;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* --- LOGO EN-TÊTE --- */
+.brand-header {
+  width: 100%;
+  padding: 24px 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-box {
+  width: 32px;
+  height: 32px;
+  background-color: #b87333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-letter {
+  color: #0a0a0a;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.brand-name {
+  color: #d9c5b2;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.step-main-wrapper {
+  width: 100%;
+  max-width: 384px; /* Default Mobile Width */
+  padding: 32px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.step-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.desktop-only-br {
+  display: none;
+}
+
+/* --- STEPPER BADGE & TITRES --- */
+.step-intro {
+  width: 100%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.step-badge-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-badge-line {
+  display: none;
+  width: 48px;
+  height: 1px;
+  background-color: rgba(184, 115, 51, 0.3);
+}
+
+.step-badge {
+  color: #b87333;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  line-height: 16px;
+}
+
+.step-main-title {
+  margin: 0;
+  color: #d9c5b2;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.step-sub-title {
+  margin: 0;
+  color: rgba(217, 197, 178, 0.6);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* --- SECTIONS DU FORMULAIRE --- */
+.form-section {
+  width: 100%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-label {
+  margin: 0;
+  color: rgba(217, 197, 178, 0.4);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --- GÉOLOCALISATION --- */
+.location-action-area {
+  position: relative;
+  width: 100%;
+}
+
+.location-glow {
+  position: absolute;
+  inset: -4px;
+  background-color: rgba(184, 115, 51, 0.05);
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.location-action-area:hover .location-glow {
+  opacity: 1;
+}
+
+.location-card-btn {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: #171514;
+  border: 1px solid rgba(217, 197, 178, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #d9c5b2;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.location-card-btn:hover {
+  border-color: rgba(184, 115, 51, 0.3);
+  background-color: #1f1c1a;
+}
+
+.location-card-btn.is-success {
+  border-color: #b87333;
+}
+
+.location-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(184, 115, 51, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  color: #b87333;
+}
+
+.location-help-text {
+  margin: 0;
+  padding: 0 8px;
+  text-align: center;
+  color: rgba(217, 197, 178, 0.35);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* --- INPUTS FLOATING LABELS --- */
+.contact-section {
+  gap: 40px;
+}
+
+.inputs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.floating-input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.floating-label {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  color: #b87333;
+  opacity: 0.7;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.input-underline-wrapper {
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(217, 197, 178, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.25s ease;
+}
+
+.input-underline-wrapper:focus-within {
+  border-bottom-color: #b87333;
+}
+
+.input-icon-left {
+  width: 16px;
+  height: 16px;
+  color: rgba(217, 197, 178, 0.3);
+}
+
+.phone-prefix-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phone-country-code {
+  color: rgba(217, 197, 178, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.phone-prefix-divider {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(217, 197, 178, 0.15);
+}
+
+.styled-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #d9c5b2;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0;
+}
+
+.styled-input::placeholder {
+  color: rgba(217, 197, 178, 0.2);
+}
+
+/* --- FOOTER & BOUTON CONTINUER --- */
+.form-submit-footer {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.submit-action-btn {
+  width: 100%;
+  padding: 18px 24px;
+  background-color: #d9c5b2;
+  border: none;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #0a0a0a;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.submit-action-btn:hover {
+  background-color: #e3d4c7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.submit-btn-arrow {
+  width: 14px;
+  height: 14px;
+  color: #0a0a0a;
+}
+
+/* --- DOTS STEPPER --- */
+.step-pagination-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-pagination-dots .dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(217, 197, 178, 0.15);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.step-pagination-dots .dot.active {
+  width: 32px;
+  height: 6px;
+  background-color: #b87333;
+  border-radius: 9999px;
+}
+
+/* =========================================================
+ * MEDIA QUERIES : ADAPTATION DESKTOP (à partir de 900px)
+ * ========================================================= */
+
+@media (min-width: 900px) {
+  .brand-header {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    padding: 0;
+    width: auto;
+  }
+
+  .step-main-wrapper {
+    max-width: 896px;
+    padding: 80px 48px;
+    justify-content: center;
+  }
+
+  .step-form {
+    align-items: center;
+  }
+
+  .desktop-only-br {
+    display: inline;
+  }
+
+  /* Intro Desktop */
+  .step-intro {
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .step-badge-line {
+    display: block;
+  }
+
+  .step-main-title {
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .step-sub-title {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: rgba(217, 197, 178, 0.5);
+  }
+
+  /* Form Content Desktop */
+  .form-section {
+    max-width: 576px;
+    margin-bottom: 64px;
+  }
+
+  .contact-section {
+    gap: 48px;
+  }
+
+  .inputs-stack {
+    gap: 48px;
+  }
+
+  .location-card-btn {
+    padding: 24px;
+  }
+
+  .location-btn-text {
+    font-size: 16px;
+  }
+
+  .location-help-text {
+    color: rgba(217, 197, 178, 0.3);
+  }
+
+  .styled-input {
+    font-size: 18px;
+  }
+
+  .phone-country-code {
+    font-size: 16px;
+  }
+
+  /* Submit Footer Desktop */
+  .form-submit-footer {
+    padding-top: 32px;
+    gap: 48px;
+  }
+
+  .submit-action-btn {
+    width: 384px;
+    padding: 24px;
+  }
+}

@@ -1,0 +1,1148 @@
+
+/* =========================================================
+   MBAAY STORE — ÉTAPE 2 — RÉCAPITULATIF BOUTIQUE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0A0A0A;
+    color: #D9C5B2;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.shop-preview-page {
+    width: 100%;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(184, 115, 51, 0.035),
+            transparent 40%
+        ),
+        #0A0A0A;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.shop-preview-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 26px 32px 10px;
+}
+
+.brand-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.brand-name {
+    color: #D9C5B2;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+
+    letter-spacing: 4px;
+}
+
+.brand-line {
+    width: 28px;
+    height: 1px;
+
+    margin-top: 5px;
+
+    background: #B87333;
+}
+
+
+/* =========================================================
+   ÉTAPE
+   ========================================================= */
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+}
+
+.step-number {
+    color: #B87333;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.step-progress {
+    width: 30px;
+    height: 2px;
+
+    background: rgba(217, 197, 178, 0.12);
+}
+
+.step-progress span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    background: #B87333;
+}
+
+.step-text {
+    color: #756B63;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.shop-preview-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 32px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.shop-preview-intro {
+    padding: 24px 0 22px;
+}
+
+.shop-preview-intro h1 {
+    margin: 0;
+
+    color: #D9C5B2;
+
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42px;
+
+    letter-spacing: -0.7px;
+}
+
+.shop-preview-intro p {
+    max-width: 330px;
+
+    margin: 10px 0 0;
+
+    color: #81766D;
+
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 23px;
+}
+
+.desktop-only {
+    display: none;
+}
+
+
+/* =========================================================
+   INFORMATIONS
+   ========================================================= */
+
+.shop-details {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid rgba(217, 197, 178, 0.055);
+    border-radius: 20px;
+
+    background: rgba(26, 22, 20, 0.22);
+
+    overflow: hidden;
+}
+
+.shop-detail-row {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px 20px;
+
+    border-bottom: 1px solid rgba(217, 197, 178, 0.045);
+}
+
+.shop-detail-row:last-child {
+    border-bottom: none;
+}
+
+.shop-detail-content {
+    min-width: 0;
+    flex: 1;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.detail-label {
+    display: block;
+
+    color: #756B63;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    line-height: 13px;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+.desktop-label {
+    display: none;
+}
+
+
+/* =========================================================
+   VALEURS
+   ========================================================= */
+
+.detail-value {
+    margin: 5px 0 0;
+
+    color: #D9C5B2;
+
+    font-size: 16px;
+    font-weight: 300;
+
+    line-height: 22px;
+
+    overflow-wrap: anywhere;
+}
+
+.shop-detail-row:first-child .detail-value {
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   MODIFIER MOBILE
+   ========================================================= */
+
+.mobile-edit-button {
+    flex: none;
+
+    margin-top: 0;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #B87333;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.mobile-edit-button:active {
+    color: #D9C5B2;
+}
+
+.desktop-edit-button {
+    display: none;
+}
+
+
+/* =========================================================
+   WAVEFORM
+   ========================================================= */
+
+.mobile-waveform {
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    margin: 16px 0 8px;
+}
+
+.mobile-waveform span {
+    width: 2px;
+
+    border-radius: 999px;
+
+    background: rgba(217, 197, 178, 0.20);
+}
+
+.mobile-waveform span:nth-child(1) {
+    height: 5px;
+}
+
+.mobile-waveform span:nth-child(2) {
+    height: 10px;
+}
+
+.mobile-waveform span:nth-child(3) {
+    height: 15px;
+}
+
+.mobile-waveform span:nth-child(4) {
+    height: 19px;
+}
+
+.mobile-waveform span:nth-child(5) {
+    height: 15px;
+}
+
+.mobile-waveform span:nth-child(6) {
+    height: 10px;
+}
+
+.mobile-waveform span:nth-child(7) {
+    height: 5px;
+}
+
+
+/* =========================================================
+   ANALYSE DESKTOP
+   ========================================================= */
+
+.analysis-card {
+    display: none;
+}
+
+
+/* =========================================================
+   FOOTER MOBILE
+   ========================================================= */
+
+.mobile-footer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 14px 32px 24px;
+}
+
+
+/* =========================================================
+   BOUTON PRINCIPAL
+   ========================================================= */
+
+.mobile-primary-action {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #D9C5B2;
+    color: #0A0A0A;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.mobile-primary-action:hover {
+    background: #E3D4C7;
+}
+
+.mobile-primary-action:active {
+    transform: scale(0.985);
+}
+
+.button-arrow {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   BOUTON TOUT MODIFIER
+   ========================================================= */
+
+.mobile-secondary-action {
+    width: 100%;
+    height: 38px;
+
+    border: none;
+    border-bottom: 1px solid rgba(217, 197, 178, 0.14);
+
+    background: transparent;
+
+    color: #81766D;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.mobile-secondary-action:hover {
+    color: #D9C5B2;
+}
+
+
+/* =========================================================
+   MODALE
+   ========================================================= */
+
+.editor-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 14px;
+
+    background: rgba(0, 0, 0, 0.74);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.editor-modal {
+    width: 100%;
+    max-width: 560px;
+
+    padding: 22px;
+
+    border: 1px solid rgba(217, 197, 178, 0.08);
+    border-radius: 22px;
+
+    background: #171412;
+
+    box-shadow:
+        0 -15px 50px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   HEADER MODALE
+   ========================================================= */
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.editor-header span {
+    color: #D9C5B2;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+.editor-close {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(217, 197, 178, 0.06);
+
+    color: #8C7E72;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.editor-modal textarea {
+    width: 100%;
+    min-height: 100px;
+
+    display: block;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    border: 1px solid rgba(217, 197, 178, 0.08);
+    border-radius: 14px;
+
+    outline: none;
+
+    background: #0F0D0C;
+    color: #D9C5B2;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 300;
+
+    line-height: 23px;
+}
+
+.editor-modal textarea:focus {
+    border-color: rgba(184, 115, 51, 0.45);
+}
+
+.editor-modal textarea::placeholder {
+    color: rgba(140, 126, 114, 0.40);
+}
+
+
+/* =========================================================
+   ACTIONS MODALE
+   ========================================================= */
+
+.editor-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.editor-cancel,
+.editor-save {
+    flex: 1;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.editor-cancel {
+    border: 1px solid rgba(217, 197, 178, 0.10);
+
+    background: transparent;
+
+    color: #8C7E72;
+}
+
+.editor-save {
+    border: none;
+
+    background: #D9C5B2;
+
+    color: #0A0A0A;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .shop-preview-header {
+        padding: 36px 60px 18px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    .step-number {
+        font-size: 13px;
+    }
+
+    .step-progress {
+        width: 40px;
+    }
+
+    .step-text {
+        font-size: 10px;
+    }
+
+    .shop-preview-content {
+        padding: 0 60px 50px;
+    }
+
+    .shop-preview-intro {
+        padding: 42px 0 46px;
+    }
+
+    .shop-preview-intro h1 {
+        font-size: 52px;
+        line-height: 58px;
+        letter-spacing: -1.5px;
+    }
+
+    .shop-preview-intro p {
+        max-width: 600px;
+
+        font-size: 17px;
+        line-height: 29px;
+    }
+
+    .desktop-only {
+        display: inline;
+    }
+
+    .shop-details {
+        border-radius: 22px;
+    }
+
+    .shop-detail-row {
+        min-height: 120px;
+
+        align-items: center;
+
+        padding: 28px 30px;
+    }
+
+    .detail-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .detail-value {
+        margin-top: 7px;
+
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .mobile-edit-button {
+        display: none;
+    }
+
+    .desktop-edit-button {
+        min-width: 90px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(184, 115, 51, 0.35);
+        border-radius: 10px;
+
+        background: transparent;
+
+        color: #B87333;
+
+        font-family: "Poppins", sans-serif;
+
+        font-size: 11px;
+        font-weight: 500;
+
+        cursor: pointer;
+    }
+
+    .desktop-edit-button:hover {
+        border-color: rgba(184, 115, 51, 0.60);
+        background: rgba(184, 115, 51, 0.05);
+    }
+
+    .mobile-waveform {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: none;
+    }
+
+    /* ANALYSE */
+
+    .analysis-card {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 24px;
+
+        padding: 42px 40px 28px;
+
+        border: 1px solid rgba(217, 197, 178, 0.06);
+        border-radius: 28px;
+
+        background: #171717;
+    }
+
+    .analysis-icon-wrapper {
+        position: relative;
+
+        width: 82px;
+        height: 82px;
+
+        margin-bottom: 20px;
+    }
+
+    .analysis-icon {
+        width: 82px;
+        height: 82px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(184, 115, 51, 0.40);
+        border-radius: 50%;
+
+        background: #1A1614;
+
+        color: #B87333;
+
+        box-shadow:
+            0 0 30px rgba(184, 115, 51, 0.10);
+
+        font-size: 27px;
+    }
+
+    .analysis-check {
+        position: absolute;
+
+        right: -2px;
+        bottom: 0;
+
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 2px solid #171717;
+        border-radius: 50%;
+
+        background: #D9C5B2;
+        color: #0A0A0A;
+
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .analysis-text {
+        max-width: 560px;
+
+        text-align: center;
+    }
+
+    .analysis-text h2 {
+        margin: 0;
+
+        color: #D9C5B2;
+
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 27px;
+    }
+
+    .analysis-text p {
+        margin: 8px 0 0;
+
+        color: #81766D;
+
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 21px;
+    }
+
+    .analysis-actions {
+        width: 100%;
+        max-width: 430px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 24px;
+    }
+
+    .primary-action,
+    .secondary-action {
+        width: 100%;
+        height: 58px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 16px;
+
+        font-family: "Poppins", sans-serif;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        cursor: pointer;
+    }
+
+    .primary-action {
+        gap: 10px;
+
+        border: none;
+
+        background: #D9C5B2;
+        color: #0A0A0A;
+    }
+
+    .primary-action:hover {
+        background: #E3D4C7;
+    }
+
+    .secondary-action {
+        border: 1px solid rgba(217, 197, 178, 0.14);
+
+        background: transparent;
+
+        color: #D9C5B2;
+    }
+
+    .audio-signature {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 14px;
+
+        margin-top: 24px;
+        padding-top: 20px;
+
+        border-top: 1px solid rgba(217, 197, 178, 0.05);
+    }
+
+    .audio-signature > span {
+        color: #625A54;
+
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .audio-waveform {
+        height: 20px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 3px;
+    }
+
+    .audio-waveform i {
+        width: 2px;
+
+        display: block;
+
+        border-radius: 999px;
+
+        background: rgba(217, 197, 178, 0.20);
+    }
+
+    .audio-waveform i:nth-child(1) { height: 6px; }
+    .audio-waveform i:nth-child(2) { height: 10px; }
+    .audio-waveform i:nth-child(3) { height: 16px; }
+    .audio-waveform i:nth-child(4) { height: 9px; }
+    .audio-waveform i:nth-child(5) { height: 18px; }
+    .audio-waveform i:nth-child(6) { height: 12px; }
+    .audio-waveform i:nth-child(7) { height: 16px; }
+    .audio-waveform i:nth-child(8) { height: 8px; }
+    .audio-waveform i:nth-child(9) { height: 12px; }
+
+    .editor-overlay {
+        align-items: center;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1100px) {
+
+    .shop-preview-header {
+        padding: 42px 80px 18px;
+    }
+
+    .brand-name {
+        font-size: 24px;
+        letter-spacing: 6px;
+    }
+
+    .brand-line {
+        width: 38px;
+    }
+
+    .step-number {
+        font-size: 15px;
+    }
+
+    .step-progress {
+        width: 48px;
+    }
+
+    .step-text {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .shop-preview-content {
+        max-width: 1440px;
+
+        margin: 0 auto;
+
+        padding: 0 80px 60px;
+    }
+
+    .shop-preview-intro {
+        max-width: 720px;
+
+        padding: 44px 0 60px;
+    }
+
+    .shop-preview-intro h1 {
+        font-size: 60px;
+        line-height: 68px;
+        letter-spacing: -2px;
+    }
+
+    .shop-preview-intro p {
+        max-width: 600px;
+
+        margin-top: 16px;
+
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .shop-detail-row {
+        min-height: 130px;
+
+        padding: 32px 40px;
+    }
+
+    .detail-label {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+    }
+
+    .detail-value {
+        font-size: 23px;
+        line-height: 34px;
+    }
+
+    .analysis-card {
+        margin-top: 28px;
+
+        padding: 46px 40px 28px;
+
+        border-radius: 30px;
+    }
+
+    .analysis-icon-wrapper,
+    .analysis-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .analysis-icon {
+        font-size: 29px;
+    }
+
+    .analysis-actions {
+        max-width: 450px;
+    }
+
+    .primary-action,
+    .secondary-action {
+        height: 62px;
+        border-radius: 18px;
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   GRAND DESKTOP
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .shop-preview-header {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .shop-preview-content {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .shop-preview-intro {
+        padding-top: 48px;
+        padding-bottom: 64px;
+    }
+
+    .shop-preview-intro h1 {
+        font-size: 64px;
+        line-height: 72px;
+    }
+
+    .shop-detail-row {
+        min-height: 138px;
+    }
+
+    .analysis-card {
+        margin-top: 30px;
+    }
+}
+
+
+/* =========================================================
+   TRÈS PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .shop-preview-header {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .shop-preview-content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .shop-preview-intro {
+        padding-top: 20px;
+        padding-bottom: 18px;
+    }
+
+    .shop-preview-intro h1 {
+        font-size: 33px;
+        line-height: 38px;
+    }
+
+    .shop-preview-intro p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .shop-detail-row {
+        padding: 18px 18px;
+    }
+
+    .detail-value {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .mobile-footer {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 20px;
+    }
+
+    .mobile-primary-action {
+        height: 55px;
+        font-size: 15px;
+    }
+}
+

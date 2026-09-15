@@ -1,6 +1,6 @@
 import agronome from '../assets/images/agronome.jpg' // Votre photo actuelle
 import agropaysage from '../assets/images/agropaysage.png' // Image détourée ou format desktop
-
+import { Link } from 'react-router-dom';
 import mbaay_store_logo from '../assets/images/mbaay_store_logo.png'
 import '../styles/EspaceAgronome.css'
 
@@ -13,9 +13,11 @@ export function EspaceAgronome() {
             <section className="contenu-gauche">
 
                 <div className="identite">
+                   
                     <span className="label">
                         ESPACE AGRONOME
                     </span>
+                   
 
                     <img
                         src={mbaay_store_logo}
@@ -38,15 +40,20 @@ export function EspaceAgronome() {
                 </div>
 
                 <div className="actions">
-                    <button className="btn-principal">
+                      <Link
+                    to="/creerboutique">
+                    <span  className="btn-principal">
                         Creer ma boutique
                         <span>→</span>
-                    </button>
-
-                    <button className="btn-secondaire">
+                    </span>
+                    </Link>
+                     <Link
+                    to="/connexion">
+                    <span className="btn-secondaire">
                         Acceder sur ma boutique
                         <span>→</span>
-                    </button>
+                    </span>
+                    </Link>
                 </div>
 
             </section>

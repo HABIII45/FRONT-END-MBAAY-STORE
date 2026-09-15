@@ -1,15 +1,13 @@
 import { useState } from 'react'
-import { Home } from './pages/Home'
-import { EspaceAgronome } from './pages/EspaceAgronome'
-import './App.css'
+import { AppRoutes } from './Routes/AppRoutes'
+
 
 function App() {
  
 
   return (
     <>
-   {/* <Home />*/}
-   <EspaceAgronome/>
+    <AppRoutes />
     </>
   )
 }
